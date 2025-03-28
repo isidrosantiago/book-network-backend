@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    url: # jdbc:...
+    username: postgres
+    password: # password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: false
+    database: postgresql
+  mail:
+    host: # host
+    port: 587
+    username: # username
+    password: # password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            trust: # trust
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+
+application:
+  security:
+    jwt:
+      secret-key: # secret
+      expiration: 3600000
+  mailing:
+    frontend:
+      activation-url: # url
+  file:
+    uploads:
+      photos-output-path: ./uploads

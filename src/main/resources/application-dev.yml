@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book_network
+    username: userbn
+    password: start
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+  mail:
+    host: localhost
+    port: 1025
+    username: is
+    password: is
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+
+application:
+  security:
+    jwt:
+      secret-key: 03978c86fd9e5f0317beeab647142eb2f2c9f5ee67dd5f46bad139064e5bf0c19f3bdf5976e9d343d67b50804a9a82c77b7dd6ee05c28c57f6112b11e4ce5165
+      expiration: 60000
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+  file:
+    uploads:
+      photos-output-path: ./uploads
